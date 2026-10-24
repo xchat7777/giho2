@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>기호2번 홍보 문자 복사</title>
+<meta name="robots" content="noindex">
+<style>
+body{margin:0;background:#f4f1ea;font-family:'Pretendard',-apple-system,sans-serif;color:#222}
+.wrap{max-width:460px;margin:0 auto;padding:20px 16px 40px}
+h1{font-size:21px;margin:0 0 14px}
+.msg{background:#fff;border:1px solid #ccc;border-radius:12px;padding:14px;font-size:17px;line-height:1.6;white-space:pre-wrap;word-break:break-all}
+button{display:block;width:100%;margin-top:12px;padding:16px;font-size:19px;font-weight:700;border:0;border-radius:12px;background:#0a0f2c;color:#fff}
+button.ok{background:#1a7f4b}
+a.open{display:block;text-align:center;margin-top:12px;font-size:16px;color:#1a5fd0}
+</style></head><body><div class="wrap">
+<h1>기호2번 홍보 문자 복사</h1>
+<p style="font-size:16px;line-height:1.6;margin:0 0 12px">단추를 눌러 복사한 뒤, 문자나 카톡에 붙여 넣어 보내 주세요.</p>
+<div class="msg" id="m">기호2번 김규환·심성은입니다.
+공약과 발대식 영상을 담았습니다 👇
+https://xchat7777.github.io/giho2/?v=3</div>
+<button id="b" onclick="cp()">📋 글 복사</button>
+<a class="open" href="https://xchat7777.github.io/giho2/?v=3">홍보 페이지 열어 보기</a>
+</div>
+<script>
+function cp(){
+  var t=document.getElementById('m').innerText, b=document.getElementById('b');
+  function ok(){b.textContent='✅ 복사됨 — 문자·카톡에 붙여 넣으세요';b.className='ok';setTimeout(function(){b.textContent='📋 글 복사';b.className='';},3000);}
+  function old(){var a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();document.execCommand('copy');a.remove();ok();}
+  if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(t).then(ok,old);}else{old();}
+}
+</script>
+</body></html>
+
+
